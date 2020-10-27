@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+  <h4 class="navbar-brand">TV MAZE</h4>
+  <div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Enter show name" name="showName"
+             aria-label="Search" [(ngModel)]="showName"/>
+      <button class="btn btn-success" type="submit" (click) = search()>Search</button>
+    </form>
+  </div>
+</nav>
