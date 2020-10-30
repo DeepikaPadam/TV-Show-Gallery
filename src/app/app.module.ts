@@ -8,6 +8,7 @@ import { DisplayDetailsComponent } from './display-details/display-details.compo
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     DashboardComponent,
     DisplayDetailsComponent,
     NavbarComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

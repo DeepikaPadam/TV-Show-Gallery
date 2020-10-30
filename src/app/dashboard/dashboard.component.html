@@ -2,9 +2,12 @@
   <h3>{{item.genre}}</h3>
   <div class="flex-nowrap flex-row overflow-auto row show-container">
     <div class="col-3 card images" *ngFor="let obj of item.details">
-      <img class="card-img-top" [src]="obj.image.medium" alt="" [routerLink]="['details']" routerLinkActive="active"
+      <img class="img-fluid" [src]="obj.image.medium" alt="" [routerLink]="['details']" routerLinkActive="active"
            [queryParams]="{ name: obj.name }" />
-        <h5 class="card-title">{{obj.name}}</h5>
+      <div class="card-footer row">
+        <span class="col-sm-6">{{obj.name}}</span>
+        <span class="col-sm-6">Rating : {{obj.rating.average}}</span>
+      </div>
     </div>
   </div>
 </div>

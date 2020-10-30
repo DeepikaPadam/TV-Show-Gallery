@@ -17,3 +17,9 @@
   color: whitesmoke;
   font-size: 14px;
 }
+.justify-content-center{
+  background-image: linear-gradient(to bottom right, black , rgb(8 21 33));
+  color: whitesmoke;
+  padding: 10px;
+  font-size: large;
+}

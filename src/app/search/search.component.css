@@ -3,7 +3,7 @@
 }
 
 .dashboard-container .show-container {
-  margin-top: 10px;
+  margin-top: 100px;
   /*height: 400px;*/
 }
 
@@ -16,15 +16,19 @@
   margin-right: 20px;
   margin-left: 20px;
   width: 250px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
-/*.dashboard-container .images > img{*/
-/*  height: 200px;*/
-/*}*/
+.dashboard-container .images > img{
+  height: 200px;
+}
 .dashboard-container .images .card-text{
   font-size: 13px;
 }
-.card-footer{
-  background: none;
-  border: none;
+
+.justify-content-center{
+  background-image: linear-gradient(to bottom right, black , rgb(8 21 33));
+  color: whitesmoke;
+  padding: 10px;
+  font-size: large;
 }

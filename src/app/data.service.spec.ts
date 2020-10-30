@@ -40,15 +40,4 @@ describe('DataService', () => {
     request.flush(response);
     httpMock.verify();
   });
-  it('Should get error', () => {
-    service.getShowsList().subscribe((err) => {
-      expect(err).toBe(err);
-    });
-  });
-
-  it('Should get error', () => {
-    service.getShowDetails('test').subscribe((err) => {
-      expect(err).toBe(err);
-    });
-  });
 });

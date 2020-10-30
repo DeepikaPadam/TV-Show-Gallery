@@ -4,31 +4,37 @@
       <div class="card-body row" *ngIf="details; else content">
           <div class="col-sm-6">
             <h3>{{details.name}}</h3>
-            <div>
-              <span>Rating: {{details.rating.average}}</span>
-              <span class="ml-3">Runtime: {{details.runtime}} Minutes</span>
+            <div *ngIf="details.rating.average">
+              <p>Rating: {{details.rating.average}}</p>
             </div>
-            <div>
-              <span>Status: {{details.status}}</span>
-              <span class="ml-3">Premiered: {{details.premiered}}</span>
+            <div *ngIf="details.runtime">
+              <p >Runtime: {{details.runtime}} Minutes</p>
             </div>
-            <p class="pt-4" [innerHTML]= "details.summary"></p>
+            <div *ngIf="details.premiered">
+              <p >Premiered: {{details.premiered}}</p>
+            </div>
+            <div *ngIf="details.status">
+              <p>Status: {{details.status}}</p>
+            </div>
+            <div *ngIf="details.summary">
+              <p [innerHTML]= "details.summary"></p>
+            </div>
             <div>
               <table class="table table-borderless">
                 <tbody>
-                <tr>
+                <tr *ngIf="details.language">
                   <td class="font-weight-bold">Language</td>
                   <td>{{details.language}}</td>
                 </tr>
-                <tr>
+                <tr *ngIf="details.genres>0">
                   <td class="font-weight-bold">Genres</td>
                   <td>{{details.genres.join(',')}}</td>
                 </tr>
-                <tr>
+                <tr *ngIf="details.network">
                   <td class="font-weight-bold">Network</td>
                   <td>{{details.network.name}}</td>
                 </tr>
-                <tr>
+                <tr *ngIf="details.network">
                   <td class="font-weight-bold">Country</td>
                   <td>{{details.network.country.name}}</td>
                 </tr>
@@ -38,10 +44,10 @@
 
           </div>
           <div class="col-sm-6 show-image">
-            <img class="" src={{details.image.original}} alt="Card image" />
+            <img class="" [src]="details.image ? details.image.original :'../../assets/defaultImg.jpg'" alt="Image not found" />
           </div>
         </div>
-      <ng-template #content>No Results Found</ng-template>
+      <ng-template #content><p class="row h-100 justify-content-center align-items-center">No Results Found</p></ng-template>
     </div>
   </div>
   <div class="text-center">

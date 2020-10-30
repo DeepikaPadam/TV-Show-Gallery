@@ -1,0 +1,13 @@
+<div class="container dashboard-container my-4">
+    <div class="flex-nowrap flex-row overflow-auto row show-container" *ngIf="searchDetails != 0; else content">
+        <div class="col-3 card images" *ngFor="let item of searchDetails">
+          <img class="card-img-top" [src]="item.show.image ? item.show.image.medium :'../../assets/defaultImg.jpg'" alt="" routerLink="/details" routerLinkActive="active"
+           [queryParams]="{ name: item.show.name }" />
+          <h5 class="card-title">{{item.show.name}}</h5>
+        </div>
+    </div>
+        <ng-template #content><p class="row h-100 justify-content-center align-items-center">No Results Found</p></ng-template>
+</div>
+<div class="text-center">
+  <button class="btn btn-primary btn-md" type="submit" [routerLink]="['']" routerLinkActive="active">Back</button>
+</div>

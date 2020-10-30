@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
-
 @Component({
   selector: 'app-display-details',
   templateUrl: './display-details.component.html',
@@ -9,21 +8,25 @@ import { DataService } from '../data.service';
 })
 export class DisplayDetailsComponent implements OnInit {
   public details;
+  public showName;
+  public name;
   constructor( private route: ActivatedRoute, private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
     this.route.queryParams
       .subscribe(params => {
-          const showName = params.name;
-          this.getSearchDetails( showName );
+          this.showName = params.name;
+          this.getDetails( this.showName );
         },
       );
   }
 
-  getSearchDetails(name) {
+  getDetails(name) {
+    this.name = name;
     this.dataService.getShowDetails( name )
       .subscribe(resp => {
         this.details = resp;
       });
   }
+
 }

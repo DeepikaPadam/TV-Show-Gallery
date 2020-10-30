@@ -14,4 +14,7 @@ export class DataService {
   getShowDetails( name ) {
     return this.http.get('http://api.tvmaze.com/singlesearch/shows?q=' + name);
   }
+  getSearchDetails( name ) {
+    return this.http.get('http://api.tvmaze.com/search/shows?q=' + name);
+  }
 }
