@@ -2,7 +2,7 @@
   <h3>Popular Shows</h3>
   <div class="flex-nowrap flex-row overflow-auto row show-container">
     <div class="col-3 card images" *ngFor="let item of showsList">
-      <img class="card-img-top" [src]="item.image ? item.image.medium :'../../assets/defaultImg.jpg'" alt="" routerLink="/details" routerLinkActive="active"
+      <img class="img-fluid" [src]="item.image ? item.image.medium :'../../assets/defaultImg.jpg'" alt="" routerLink="/details" routerLinkActive="active"
         [queryParams]="{ name: item.name }" />
       <div class="card-text">
         <span>{{item.name}}  </span> 
