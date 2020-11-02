@@ -4,9 +4,9 @@
     <div class="col-3 card images" *ngFor="let obj of item.details">
       <img class="img-fluid" [src]="obj.image.medium" alt="" [routerLink]="['details']" routerLinkActive="active"
            [queryParams]="{ name: obj.name }" />
-      <div class="card-footer row">
-        <span class="col-sm-6">{{obj.name}}</span>
-        <span class="col-sm-6">Rating : {{obj.rating.average}}</span>
+      <div class="card-text">
+        <span>{{obj.name}}  </span> 
+        <span><span>&#124; </span>{{obj.rating.average}}</span>
       </div>
     </div>
   </div>
