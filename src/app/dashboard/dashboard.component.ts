@@ -19,8 +19,10 @@ export class DashboardComponent implements OnInit {
       .subscribe(
         resp => {
           this.showsList = resp;
+          this.showsList.sort((a, b) => (b.rating.average > a.rating.average) ? 1 : -1);  
           this.generateShowsList();
         },
+        err => console.error('Observer got an error: ' + err),
       );
   }
   generateShowsList() {
@@ -39,7 +41,6 @@ export class DashboardComponent implements OnInit {
           item[details] = data;
       });
       });
-      item.details.sort((a, b) => (b.rating.average > a.rating.average) ? 1 : -1);
     });
   }
   getAllGenres() {
@@ -50,3 +51,4 @@ export class DashboardComponent implements OnInit {
     return [...new Set([...genresList])]
   }
 }
+
