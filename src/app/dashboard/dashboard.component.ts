@@ -43,13 +43,10 @@ export class DashboardComponent implements OnInit {
     });
   }
   getAllGenres() {
-    const genresList = [];
-    this.showsList.forEach(obj => {
-      genresList.push(obj.genres);
+    let genresList = []
+    this.showsList.forEach(array => {
+      genresList = [...genresList, ...array.genres]
     });
-    const allGenres = (arr) => {
-      return [...new Set([].concat(...arr))];
-    };
-    return allGenres(genresList);
+    return [...new Set([...genresList])]
   }
 }
