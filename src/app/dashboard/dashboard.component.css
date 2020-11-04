@@ -18,13 +18,8 @@
   width: 250px;
   cursor: pointer;
 }
-/*.dashboard-container .images > img{*/
-/*  height: 200px;*/
-/*}*/
+
 .dashboard-container .images .card-text{
   font-size: 13px;
 }
-.card-footer{
-  background: none;
-  border: none;
-}
+
