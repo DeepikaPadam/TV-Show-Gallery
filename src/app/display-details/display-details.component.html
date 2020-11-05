@@ -26,7 +26,7 @@
                   <td class="font-weight-bold">Language</td>
                   <td>{{details.language}}</td>
                 </tr>
-                <tr *ngIf="details.genres>0">
+                <tr *ngIf="details.genres.length>0">
                   <td class="font-weight-bold">Genres</td>
                   <td>{{details.genres.join(',')}}</td>
                 </tr>
